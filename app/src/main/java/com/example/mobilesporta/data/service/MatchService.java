@@ -4,7 +4,6 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.mobilesporta.data.MapConst;
 import com.example.mobilesporta.model.MatchModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,7 +35,6 @@ public class MatchService {
 
     Map<String, MatchModel> mapMatchByDateTime = new HashMap<>();
     List<MatchModel> listMatchByDate = new ArrayList<>();
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     String matchKey = new String();
 
@@ -61,8 +59,7 @@ public class MatchService {
                             Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
                             Date date2 = new SimpleDateFormat("dd-MM-yyyy").parse(match.getDate());
 
-                            if(date1.compareTo(date2) <= 0 && !user.getUid().equals(match.getUser_created_id())
-                                    && match.getStatus().equals(MapConst.STATUS_MATCH_NONE)) {
+                            if(date1.compareTo(date2) <= 0) {
                                 listMatchByDate.add(match);
                             }
                         } catch (ParseException e) {
@@ -100,8 +97,7 @@ public class MatchService {
                             Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
                             Date date2 = new SimpleDateFormat("dd-MM-yyyy").parse(match.getDate());
 
-                            if(date1.compareTo(date2) <= 0 && !user.getUid().equals(match.getUser_created_id())
-                                    && match.getStatus().equals(MapConst.STATUS_MATCH_NONE)) {
+                            if(date1.compareTo(date2) <= 0) {
                                 mapMatchByDateTime.put(snapshot.getKey(), match);
                             }
                         } catch (ParseException e) {
@@ -131,7 +127,6 @@ public class MatchService {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
-                    listMatchModels.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         MatchModel match = snapshot.getValue(MatchModel.class);
 
@@ -164,7 +159,6 @@ public class MatchService {
                 Log.e("us_id", user_id);
 
                 if(dataSnapshot.exists()) {
-                    listMatchModels.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         MatchModel match = snapshot.getValue(MatchModel.class);
                         if (match.getUser_created_id().equals(user_id)) {
@@ -194,7 +188,6 @@ public class MatchService {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
-                    listMatchId.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         listMatchId.add(snapshot.getKey());
                     }
@@ -228,8 +221,7 @@ public class MatchService {
                             Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
                             Date date2 = new SimpleDateFormat("dd-MM-yyyy").parse(match.getDate());
 
-                            if(date1.compareTo(date2) <= 0 && !user.getUid().equals(match.getUser_created_id())
-                                    && match.getStatus().equals(MapConst.STATUS_MATCH_NONE)) {
+                            if(date1.compareTo(date2) <= 0) {
                                 listMatchIdByDate.add(snapshot.getKey());
                             }
                         } catch (ParseException e) {
@@ -263,7 +255,6 @@ public class MatchService {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
-                    listMatchId.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         MatchModel match = snapshot.getValue(MatchModel.class);
                         if (match.getUser_created_id().equals(user_id)) {
@@ -293,7 +284,6 @@ public class MatchService {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
-                    mapMatchs.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
                         MatchModel matchModel = snapshot.getValue(MatchModel.class);

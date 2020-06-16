@@ -10,7 +10,7 @@
     tools:context=".fragment.game.SugesstionsFbMatch_TabFragment">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -19,36 +19,23 @@
             android:id="@+id/tvSugesstion_Match_Fragment_FilterDateTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFC107"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:visibility="gone"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Ngày "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtSugesstion_Match_Fragment_FilterDateSearch"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:background="@drawable/bgbtnloginlogout"
-            android:padding="5dp"
-            android:layout_marginLeft="5dp"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"/>
-
-        <TextView
-            android:id="@+id/txtSugesstion_Match_Fragment_FilterDateSearch2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:background="@drawable/bgbtnloginlogout"
-            android:padding="5dp"
-            android:layout_marginLeft="5dp"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"/>
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:text="Chọn ngày"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSugesstion_Match_Fragment_FilterDateTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvSugesstion_Match_Fragment_FilterDateTitle"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -57,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="10dp"
+            android:text="Thời gian"
             app:layout_constraintLeft_toRightOf="@id/tvSugesstion_Match_Fragment_FilterDateTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,32 +54,33 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="12dp"
-            android:textSize="24sp"
+            android:text="Từ"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvSugesstion_Match_Fragment_FilterTimeTitle"
             app:layout_constraintStart_toEndOf="@+id/tvSugesstion_Match_Fragment_FilterTimeTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/txtSugesstion_Match_Fragment_FilterTimeSearchTo"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="60dp"-->
-        <!--            android:layout_marginTop="12dp"-->
-        <!--            android:text="Đến"-->
-        <!--            android:textSize="14sp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="@+id/tvSugesstion_Match_Fragment_FilterTimeTitle"-->
-        <!--            app:layout_constraintStart_toEndOf="@+id/tvSugesstion_Match_Fragment_FilterTimeTitle"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/txtSugesstion_Match_Fragment_FilterTimeSearchTo"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:text="Đến"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/tvSugesstion_Match_Fragment_FilterTimeTitle"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/tvSugesstion_Match_Fragment_FilterTimeTitle"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <!--        <Button-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Tìm"-->
-        <!--            android:layout_marginRight="20dp"-->
-        <!--            app:layout_constraintRight_toRightOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"/>-->
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Tìm"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/Sugesstion_Match_Fragment_listMatch_Layout"

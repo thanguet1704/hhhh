@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mobilesporta.activity.account.EditAccount;
 import com.example.mobilesporta.activity.club.ClubProfile;
+import com.example.mobilesporta.data.service.NewsService;
 import com.example.mobilesporta.fragment.account.AccountFragment;
 import com.example.mobilesporta.fragment.club.CLubFragment;
 import com.example.mobilesporta.fragment.game.GameFragment;

@@ -37,9 +37,6 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
-    implementation 'com.google.firebase:firebase-messaging:20.2.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -52,8 +49,8 @@ dependencies {
 
     // quang add
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.android.support:percent:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:percent:29.0.0'
+    implementation 'com.android.support:design:29.0.0'
 
     implementation 'com.google.android.material:material:1.0.0'
 
@@ -65,7 +62,12 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.github.delight-im:Android-SimpleLocation:v1.1.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:support-v4:24.2.1'
+    //suong_add
+    //picasso for image url
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.android.support:recyclerview-v7:29'
+    implementation 'com.android.support:cardview-v7:29.+'
+    implementation 'com.firebaseui:firebase-ui-database:6.2.0'
+
 
 }
